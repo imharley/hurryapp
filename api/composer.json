@@ -21,6 +21,7 @@
     "autoload": {
         "classmap": [
             "database",
+            "external",
             "vendor/clusterpoint/php-client-api/cps_api.php",
             "app/Http/Controllers/CPS.php"
         ],

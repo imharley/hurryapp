@@ -58,6 +58,129 @@ ul li { list-style-type: none; }
 .inp-search-keyword{ float: right; background:rgba(0,0,0,0) none repeat scroll 0 0;border:medium none;box-shadow:none;height:29px;margin:6px 0 0;padding:6px 10px;width:90%!important;color:#fff}
 .inp-search-keyword:focus{box-shadow:none;border:none}
 
+.store-nav-2 {
+    height: 100px;
+}
+
+.store-order-nav > li {
+    margin: 0 14px 0 0;
+    text-align: left;
+    width: auto;
+}
+
+.total-order-form {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: relative;
+}
+
+.total-order-form .form-group {
+    background-color: #ff8000;
+    border-radius: 12px;
+    display: block;
+    height: 61px;
+    padding: 0 8px 0 30px;
+}
+
+.total-order-form .form-group span {
+    color: #fff;
+    float: left;
+    font-size: 18px;
+    padding: 0;
+    font-weight: bold;
+    margin: 0 8px 0 0;
+    position: relative;
+    top: 3px;
+}
+
+.total-order-form .total-price {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none;
+    box-shadow: none;
+    display: block;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold;
+    width: 80%;
+}
+
+.store-order-nav > li:last-child {
+    margin: 0;
+    width: 85% !important;
+}
+
+.total-order-submit {
+    background: rgba(0, 0, 0, 0) url("images/right-arrow.png") no-repeat scroll 0 0;
+    border: medium none;
+    color: transparent;
+    height: 32px;
+    padding: 0;
+    position: absolute;
+    right: 20px;
+    top: 13px;
+    width: 17px;
+}
+
+.total-order-submit:hover {
+    background-color: transparent;
+    color: transparent;
+}
+
+.total-order-lbl {
+    text-align: center;
+    top: 0 !important;
+    width: 100%;
+}
+
+#owl-demo .item{
+  margin: 3px;
+}
+#owl-demo .item img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+#demo  { overflow: hidden; }
+
+.owl-pagination {
+    display: none;
+}
+
+.owl-controls {
+    margin: 0 !important;
+    position: absolute;
+    top: 46%;
+    width: 100%;
+}
+
+.owl-controls .owl-buttons {
+    position: relative;
+}
+
+.owl-controls .owl-buttons .owl-prev {
+    position: absolute;
+    left: 25px;
+    background: url("images/left-arrow-white.png") !important;
+    color: transparent !important;
+}
+
+.owl-controls .owl-buttons .owl-next {
+    position: absolute;
+    right: 25px;
+    background: url("images/right-arrow-white.png") !important;
+    color: transparent !important;
+}
+
+.owl-controls .owl-buttons > div { width: 41px; height: 53px; }
+
+.owl-wrapper .owl-item {
+    
+}
 
 
 /*-------------------------------
@@ -66,6 +189,9 @@ ul li { list-style-type: none; }
 
 @media screen and (max-width: 980px) {  
 
+}
+
+@media screen and (max-width: 768px) {  
 }
 
 @media screen and (max-width: 375px) {  

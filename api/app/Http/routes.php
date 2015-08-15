@@ -11,8 +11,11 @@
 |
 */
 
-Route::get('/store','store@index');
-Route::get('/logout','store@logout');
+
+Route::get('/logout','Store@logout');
+
+Route::get('/store','Store@index');
+
 Route::get('/login',function()
 {
     return view('store.login');
@@ -21,10 +24,9 @@ Route::get('/register',function()
 {	
     return view('store.register');
 });
-Route::post('/register','store@add');
-Route::post('/login','store@login');
-Route::post('/product/add','product@save');
-Route::post('/delivery/add-person','delivery@addPerson');
+Route::post('/register','Store@add');
+Route::post('/login','Store@login');
+Route::post('/product/add','Product@save');
 
 Route::get('/connect','CPS@connect');
 

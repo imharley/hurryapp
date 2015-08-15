@@ -1,0 +1,27 @@
+    <div id="main-wrap">
+        <div id="header">
+            <div class="container">
+                <img class="main-logo" src="images/logo.png" />
+                <h5>KNOWING YOU MORE</h5>
+            </div>
+            
+        </div>
+
+        <div id="main-content">
+            <div class="container">
+                <form ng-submit="submit()" ng-controller="registerStep2Controller" role="search" class="navbar-form navbar-left registration-form">
+                    <div class="form-group">
+                        <span class="inp-label">Email Address</span>
+                        <input type="email" class="form-control inp-number" ng-model="email" name="email">
+                    </div>
+
+                    <div class="form-group">
+                        <span class="inp-label">Full Name</span>
+                        <input type="text" class="form-control inp-number" ng-model="name" name="name">
+                    </div>
+                    <button class="btn btn-default" type="submit">NEXT</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
