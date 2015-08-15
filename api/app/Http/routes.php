@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/store',function()
-{
-    return view('store.index');
-});
+Route::get('/store','store@index');
 Route::get('/login',function()
 {
     return view('store.login');

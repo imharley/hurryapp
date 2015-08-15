@@ -42,7 +42,7 @@
         <div class="col-sm-12">
         <label class="">Longtitude</label>
         
-          <input type="text" class="form-control" name="longtitude" id="longtitude" placeholder="Longtitude">
+          <input type="text" class="form-control" name="longitude" id="longitude" placeholder="Longitude">
         </div>
         <div class="col-sm-12">
         <label class="">Latitude</label>      
