@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5c6026b96e6fa11a641b51a6ba976f5e",
+    "hash": "371953db63a8a9430c3df594a0682237",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -59,6 +59,45 @@
                 "preload"
             ],
             "time": "2015-06-28 21:39:13"
+        },
+        {
+            "name": "clusterpoint/php-client-api",
+            "version": "3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/clusterpoint/php-client-api.git",
+                "reference": "859841ebfeb076cbebddbf860b3fe067c4d3614e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/clusterpoint/php-client-api/zipball/859841ebfeb076cbebddbf860b3fe067c4d3614e",
+                "reference": "859841ebfeb076cbebddbf860b3fe067c4d3614e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "cps_simple.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ClusterPoint"
+                }
+            ],
+            "homepage": "https://www.clusterpoint.com/",
+            "keywords": [
+                "api",
+                "clusterpoint"
+            ],
+            "time": "2015-03-17 15:58:27"
         },
         {
             "name": "danielstjules/stringy",
