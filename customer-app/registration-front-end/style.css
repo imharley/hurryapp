@@ -2,6 +2,8 @@
     Body
 ---------------------------------*/
 body { font-family: Lato; background-color: #255a94; }
+.container { padding-left: 0; padding-right: 0; }
+ul li { list-style-type: none; }
 
 /*-------------------------------
     Header
@@ -21,6 +23,43 @@ body { font-family: Lato; background-color: #255a94; }
 .inp-label{color:#666;font-size:12px;padding:5px}
 .confirmation-code-wrap{margin:48px auto 0;text-align:center;width:320px}
 .confirmation-code{color:#fff}
+.user-store-wrap { background-color: #fff; }
+.gmap { margin: 0 auto; border-bottom: 1px solid #999999; }
+.store-details { margin: 8px 0 0 8px; padding: 0 0 8px; height: 86px; }
+.store-details-list { margin: 0; padding: 0; float: left; }
+.store-photo { float: left; margin: 0 10px 0 0; }
+.store-details-list li { list-style-type: none; }
+.store-name { font-size: 15px !important; }
+.store-details-list li a { color: #333; font-size: 12px; }
+.store-current-distance { color: #0085b2 !important; }
+.store-next{float:right;position:relative;right:10px;top:26px}
+
+.user-store-navigation {
+    background-color: #525252;
+    height: 90px;
+    padding: 20px 0;
+}
+
+.user-store-nav-list {
+    margin: 0;
+}
+
+.user-store-nav-list > li {
+    float: left;
+    text-align: center;
+    width: 32%;
+}
+
+.user-store-nav-list > li a {
+    color: #fff;
+}
+
+.sub-user-nav-list {
+    padding: 0;
+}
+
+.user-store-nav-list > li a:hover { text-decoration: none; }
+
 
 /*-------------------------------
     Media Query
