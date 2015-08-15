@@ -1,0 +1,31 @@
+/*-------------------------------
+    Body
+---------------------------------*/
+body { font-family: Lato; background-color: #255a94; }
+
+/*-------------------------------
+    Header
+---------------------------------*/
+.main-logo { margin: 0 auto; display: block; width: 60px; height: 77px; }
+#header h5 { color: #fff;  text-align: center; margin: 20px 0; }
+
+/*-------------------------------
+    Content
+---------------------------------*/
+#main-wrap{padding:20px 0}
+.registration-form{float:none!important;margin:0 auto;width:50%}
+.registration-form .form-group{background-color:#fff;display:block;margin:0 auto 15px;padding:0 0 10px;max-width:320px;border-radius:5px 5px 5px 5px;-moz-border-radius:5px;-webkit-border-radius:5px 5px 5px 5px}
+.registration-form .inp-number{border:medium none;box-shadow:none;margin:0 auto!important;padding-left:42px;padding-right:42px;max-width: 320px;color:#333;font-size:23px}
+.registration-form button{background-color:#59abe3;border:none;color:#fff;display:block;margin:0 auto;width:320px}
+.registration-form button:hover{-webkit-transition:background-color 500ms ease;-moz-transition:background-color 500ms ease;-ms-transition:background-color 500ms ease;-o-transition:background-color 500ms ease;transition:background-color 500ms ease;background-color:#bdc3c7}
+.inp-label{color:#666;font-size:12px;padding:5px}
+.confirmation-code-wrap{margin:48px auto 0;text-align:center;width:320px}
+.confirmation-code{color:#fff}
+
+/*-------------------------------
+    Media Query
+---------------------------------*/
+
+@media screen and (max-width: 980px) {  
+
+}
