@@ -20,8 +20,9 @@ class Store extends Controller
 		  					['store_id'=>$store_id]		  					
 		  				);
 
+    	$orders = CPS::findMany('order');    	
     	if(!empty($store_id))
-    		return view('store.index',compact('products','delivery_persons'));
+    		return view('store.index',compact('products','delivery_persons','orders'));
     	else
     		return redirect('/login');
     }

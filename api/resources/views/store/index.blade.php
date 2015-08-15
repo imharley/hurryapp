@@ -17,7 +17,7 @@
           <ul id="myTabs" class="nav navbar-nav" role="tablist">
 		      <li role="presentation" class="active"><a href="#products" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="false">Products</a></li>
 		      <li role="presentation" class=""><a href="#orders" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile" aria-expanded="true">Orders</a></li>
-		      <li role="presentation" class=""><a href="#delivery" role="tab" id="delivery-tab" data-toggle="tab" aria-controls="delivery" aria-expanded="true">Delivery</a></li>
+		      <li role="presentation" class=""><a href="#delivery" role="tab" id="delivery-tab" data-toggle="tab" aria-controls="delivery" aria-expanded="true">Delivery Persons</a></li>
 		      <li role="presentation" class=""><a href="/logout">Logout</a></li>
 		    </ul>
         </div>
@@ -93,7 +93,7 @@
 		      		</tr>
 		      	</thead>
 		      	<tbody>
-		      		@if(count($products))
+		      		@if(count(@$products))
 			      		@foreach($products as $product)
 				      		<tr>
 				      			<td><img width="70" class="img-responsive img-thumbnail" src="{{ $product['image'] }}" alt="{{ $product['product_name'] }}"/></td>
@@ -124,19 +124,172 @@
 		    </ul>
 		    <div id="myTabContent" class="tab-content">
 			      <div role="tabpanel" class="tab-pane fade active in" id="pending" aria-labelledby="pending-tab">
-			        <p>Pending</p>
+
+			        <table class="table table-bordered table-striped 	table-hover" >
+				      	<thead>
+				      		<tr>				      		
+					      		<th>Order ID</th>					      		
+					      		<th>Product Count</th>					      		
+					      		<th>Notes</th>
+					      		<th>Total</th>	
+					      		<th>Status</th>	
+
+				      		</tr>
+				      	</thead>
+				      	<tbody>
+				      		@if(count(@$orders))
+					      		@foreach($orders as $order)						      		
+					      			@if($order['status'] == 'pending')
+							      		<tr>				      			
+							      			<td >{{ $order['id'] }}</td>							      										      			
+							      			<td >{{ count(@$order['items']) }}</td>							      			
+							      			<td >{{ @$order['notes'] }}</td>
+							      			<td >{{ $order['total'] }}</td>							      			
+							      			<td ><a href="/order/acknowledge/{{ $order['id'] }}" class="btn btn-info" >					      		
+			  Acknowledge
+			</a></td>	
+							      		</tr>
+						      		@endif
+					      		@endforeach
+					      	@else
+					      		<tr>
+					      			<td colspan="4">No Pending Orders Found.</td>
+					      		</tr>
+					      	@endif
+				      	</tbody>
+			      	</table>
 			      </div>
 			      <div role="tabpanel" class="tab-pane fade" id="acknowledge" aria-labelledby="acknowledge-tab">
-			        <p>Acknowledge.</p>
+			        
+			        <table class="table table-bordered table-striped 	table-hover" >
+				      	<thead>
+				      		<tr>				      		
+					      		<th>Order ID</th>					      		
+					      		<th>Product Count</th>					      		
+					      		<th>Notes</th>
+					      		<th>Total</th>	
+					      		<th>Status</th>				      		
+				      		</tr>
+				      	</thead>
+				      	<tbody>
+				      		@if(count(@$orders))
+					      		@foreach($orders as $order)						      		
+					      			@if($order['status'] == 'acknowledge')
+							      		<tr>				      			
+							      			<td >{{ $order['id'] }}</td>							      										      			
+							      			<td >{{ count(@$order['items']) }}</td>							      			
+							      			<td >{{ @$order['notes'] }}</td>
+							      			<td >{{ $order['total'] }}</td>							      			
+							      			<td ><a href="/order/acknowledge/{{ $order['id'] }}" class="btn btn-info" >					      		
+			  Acknowledge
+			</a></td>	
+							      		</tr>
+						      		@endif
+					      		@endforeach
+					      	@else
+					      		<tr>
+					      			<td colspan="4">No Acknowledge Orders Found.</td>
+					      		</tr>
+					      	@endif
+				      	</tbody>
+			      	</table>
 			      </div>
 			      <div role="tabpanel" class="tab-pane fade" id="for-delivery" aria-labelledby="for-delivery-tab">
-			        <p>Queue for Delivery</p>
+			        
+			        <table class="table table-bordered table-striped 	table-hover" >
+				      	<thead>
+				      		<tr>				      		
+					      		<th>Order ID</th>					      		
+					      		<th>Product Count</th>					      		
+					      		<th>Notes</th>
+					      		<th>Total</th>	
+					      		<th>Status</th>						      		
+				      		</tr>
+				      	</thead>
+				      	<tbody>
+				      		@if(count(@$orders))
+					      		@foreach($orders as $order)
+					      			@if($order['status'] == 'for_delivery')
+							      		<tr>				      			
+							      			<td >{{ $order['id'] }}</td>							      										      			
+							      			<td >{{ count(@$order['items']) }}</td>							      			
+							      			<td >{{ @$order['notes'] }}</td>
+							      			<td >{{ $order['total'] }}</td>	
+							      			<td ><a href="/on-the-way/{{ $order['id'] }}" class="btn btn-info" data-toggle="modal" data-target="#myModal">
+			  On the way
+			</a></td>	
+							      		</tr>
+						      		@endif
+					      		@endforeach
+					      	@else
+					      		<tr>
+					      			<td colspan="4">No For Delivery Orders Found.</td>
+					      		</tr>
+					      	@endif
+				      	</tbody>
+			      	</table>
 			      </div>
-			      <div role="tabpanel" class="tab-pane fade" id="on-the-way" aria-labelledby="on-the-way-tab">
-			        <p>On the way</p>
+			      <div role="tabpanel" class="tab-pane fade" id="on-the-way" aria-labelledby="on-the-way-tab">			        
+			        <table class="table table-bordered table-striped 	table-hover" >
+				      	<thead>
+				      		<tr>				      		
+					      		<th>Order ID</th>					      		
+					      		<th>Product Count</th>					      		
+					      		<th>Notes</th>
+					      		<th>Total</th>	
+					      								      						      	
+				      		</tr>
+				      	</thead>
+				      	<tbody>
+				      		@if(count(@$orders))
+					      		@foreach($orders as $order)
+					      			@if($order['status'] == 'on_th_way')
+							      		<tr>				      			
+							      			<td >{{ $order['id'] }}</td>							      										      			
+							      			<td >{{ count(@$order['items']) }}</td>							      			
+							      			<td >{{ @$order['notes'] }}</td>
+							      			<td >{{ $order['total'] }}</td>	
+							      			
+							      		</tr>
+						      		@endif
+					      		@endforeach
+					      	@else
+					      		<tr>
+					      			<td colspan="4">No On The Way Orders Found.</td>
+					      		</tr>
+					      	@endif
+				      	</tbody>
+			      	</table>
 			      </div>
 			      <div role="tabpanel" class="tab-pane fade" id="delivered" aria-labelledby="delivered-tab">
-			        <p>Delivered</p>
+			        <table class="table table-bordered table-striped 	table-hover" >
+				      	<thead>
+				      		<tr>				      		
+					      		<th>Order ID</th>					      		
+					      		<th>Product Count</th>					      		
+					      		<th>Notes</th>
+					      		<th>Total</th>						      			      	
+				      		</tr>
+				      	</thead>
+				      	<tbody>
+				      		@if(count(@$orders))
+					      		@foreach($orders as $order)
+					      			@if($order['status'] == 'delivered')
+							      		<tr>				      			
+							      			<td >{{ $order['id'] }}</td>							      										      			
+							      			<td >{{ count(@$order['items']) }}</td>							      			
+							      			<td >{{ @$order['notes'] }}</td>
+							      			<td >{{ $order['total'] }}</td>				
+							      		</tr>
+						      		@endif
+					      		@endforeach
+					      	@else
+					      		<tr>
+					      			<td colspan="4">No Delivered Orders Found.</td>
+					      		</tr>
+					      	@endif
+				      	</tbody>
+			      	</table>
 			      </div>
 			    </div>
 			  </div>
@@ -193,7 +346,7 @@
 			      		</tr>
 			      	</thead>
 			      	<tbody>
-			      		@if(count($delivery_persons))
+			      		@if(count(@$delivery_persons))
 				      		@foreach($delivery_persons as $delivery_person)
 					      		<tr>				      			
 					      			<td >{{ $delivery_person['name'] }}</td>
@@ -213,9 +366,4 @@
 
 	</div>
 </div>
-@stop
-
-@section('footer')
-<script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
-        async defer></script>
 @stop
