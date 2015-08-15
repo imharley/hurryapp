@@ -27,6 +27,7 @@ Route::get('/register',function()
 Route::post('/register','Store@add');
 Route::post('/login','Store@login');
 Route::post('/product/add','Product@save');
+Route::post('/delivery/add-person','Delivery@addPerson');
 
 Route::get('/connect','CPS@connect');
 
