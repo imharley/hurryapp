@@ -1,0 +1,22 @@
+    <div id="main-wrap">
+        <div id="header">
+            <div class="container">
+                <img class="main-logo" src="images/logo.png" />
+                <h5>LINK YOUR DEVICE</h5>
+            </div>
+            
+        </div>
+
+        <div id="main-content">
+            <div class="container">
+                <form ng-submit="submit()" ng-controller="registerStep1Controller" class="navbar-form navbar-left registration-form">
+                    <div class="form-group">
+                        <span class="inp-label">Mobile Number</span>
+                        <input type="text" class="form-control inp-number" placeholder="0920XXXXXX" ng-model="phone" name="phone" valid-number>
+                    </div>
+                    <button class="btn btn-default" type="submit">NEXT</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
