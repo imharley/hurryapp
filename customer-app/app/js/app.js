@@ -25,6 +25,14 @@ function($routeProvider) {
       templateUrl: 'templates/dashboard.html',
       controller: 'dashboardController'
     }).
+    when('/recent', {
+      templateUrl: 'templates/recent.html',
+      controller: 'recentController'
+    }).
+    when('/order/:storeId', {
+      templateUrl: 'templates/order.html',
+      controller: 'orderController'
+    }).
     otherwise({
       redirectTo: '/dashboard'
     });
