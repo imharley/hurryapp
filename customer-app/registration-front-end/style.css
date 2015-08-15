@@ -17,7 +17,7 @@ ul li { list-style-type: none; }
 #main-wrap{padding:20px 0}
 .registration-form{float:none!important;margin:0 auto;width:50%}
 .registration-form .form-group{background-color:#fff;display:block;margin:0 auto 15px;padding:0 0 10px;max-width:320px;border-radius:5px 5px 5px 5px;-moz-border-radius:5px;-webkit-border-radius:5px 5px 5px 5px}
-.registration-form .inp-number{border:medium none;box-shadow:none;margin:0 auto!important;padding-left:42px;padding-right:42px;max-width: 320px;color:#333;font-size:23px}
+.registration-form .inp-number{border:medium none; text-align: center; box-shadow:none;margin:0 auto!important;padding-left:42px;padding-right:42px;max-width: 320px;color:#333;font-size:23px}
 .registration-form button{background-color:#59abe3;border:none;color:#fff;display:block;margin:0 auto;width:320px}
 .registration-form button:hover{-webkit-transition:background-color 500ms ease;-moz-transition:background-color 500ms ease;-ms-transition:background-color 500ms ease;-o-transition:background-color 500ms ease;transition:background-color 500ms ease;background-color:#bdc3c7}
 .inp-label{color:#666;font-size:12px;padding:5px}
@@ -33,38 +33,41 @@ ul li { list-style-type: none; }
 .store-details-list li a { color: #333; font-size: 12px; }
 .store-current-distance { color: #0085b2 !important; }
 .store-next{float:right;position:relative;right:10px;top:26px}
+.user-store-navigation{background-color:#525252;height:90px;padding:20px 0}
+.user-store-nav-list{margin:0}
+.user-store-nav-list > li{float:left;text-align:center;width:32%}
+.user-store-nav-list > li a{color:#fff}
+.sub-user-nav-list{padding:0}
+.user-store-nav-list > li a:hover{text-decoration:none}
+.store-back{float:left;margin:0 10px 0 0}
+.store-details-1 .store-back{position:relative;top:20px}
+.store-checkout-wrap { background-color: #fff; padding: 4px 0; }
 
-.user-store-navigation {
-    background-color: #525252;
-    height: 90px;
-    padding: 20px 0;
+.order-summary {
+    padding: 0 15px;
 }
 
-.user-store-nav-list {
-    margin: 0;
-}
-
-.user-store-nav-list > li {
-    float: left;
+.order-summary-title {
+    font-size: 16px;
     text-align: center;
-    width: 32%;
 }
 
-.user-store-nav-list > li a {
-    color: #fff;
+.order-summary-table thead tr th {
+    width: 30%;
 }
-
-.sub-user-nav-list {
-    padding: 0;
-}
-
-.user-store-nav-list > li a:hover { text-decoration: none; }
-
 
 /*-------------------------------
     Media Query
 ---------------------------------*/
 
 @media screen and (max-width: 980px) {  
+
+}
+
+@media screen and (max-width: 375px) {  
+
+	.registration-form .inp-number { padding-left: 0; padding-right: 0; }
+	.registration-form button { width: 100%; }
+	.registration-form { width: auto; }
 
 }
