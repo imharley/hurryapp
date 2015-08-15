@@ -39,8 +39,8 @@ Route::get('/', function () {
 Route::post('/api/customer/login', 'CustomerAPIController@login');
 Route::get('/api/customer/orders/recent', 'CustomerAPIController@recentOrders');
 Route::get('/api/customer/stores', 'CustomerAPIController@stores');
-Route::post('/orders', 'CustomerAPIController@orders');
-Route::put('/orders/{id}', 'CustomerAPIController@updateOrderStatus');
+Route::post('/api/customer/orders', 'CustomerAPIController@createOrder');
+Route::put('/api/customer/orders/{id}', 'CustomerAPIController@updateOrderStatus');
 
 // DELIVERY
 Route::post('/login/driver', 'DeliveryAPIController@login');

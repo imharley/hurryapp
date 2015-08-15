@@ -19,6 +19,7 @@ class CustomerAPIController extends Controller
     public function __construct()
     {
         $this->middleware('cors');
+        $this->middleware('apiAuth');
     }
 
     /**
@@ -48,8 +49,23 @@ class CustomerAPIController extends Controller
     /**
      * 
      */
+    public function stores()
+    {
+        $stores = \CPS::findMany('store');
+        if ($stores) {
+            foreach ($stores as $store) {
+                $store['items'] = \CPS::findMany('product', ['store_id' => $store['id']]);
+            }
+        }
+        return $stores;
+    }
+
+    /**
+     * 
+     */
     public function recentOrders()
     {
+        
     }
 
     /**
@@ -57,7 +73,7 @@ class CustomerAPIController extends Controller
      */
     public function createOrder()
     {
-        
+//        $order = \Input
     }
 
     /**

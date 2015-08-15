@@ -10,9 +10,11 @@ use CPS;
  */
 class Customer
 {
-    const TYPE = 'customers';
+    const TYPE = 'customer';
     
     public $data;
+    
+    private static $_customer;
     
     /**
      * @param $id
@@ -77,5 +79,21 @@ class Customer
     public function isNew()
     {
         return !isset($this->data['name']) && !isset($this->data['email']);
+    }
+
+    /**
+     * @param $user
+     */
+    public static function setCurrent($user)
+    {
+        static::$_customer = $user;
+    }
+
+    /**
+     * @return mixed
+     */
+    public static function getCurrent()
+    {
+        return static::$_customer;
     }
 }
