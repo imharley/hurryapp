@@ -16,8 +16,12 @@ class Store extends Controller
 		  					['store_id'=>$store_id]		  					
 		  				);
 
+    	$delivery_persons = CPS::findMany('delivery-person',
+		  					['store_id'=>$store_id]		  					
+		  				);
+
     	if(!empty($store_id))
-    		return view('store.index',compact('products'));
+    		return view('store.index',compact('products','delivery_persons'));
     	else
     		return redirect('/login');
     }
@@ -37,6 +41,11 @@ class Store extends Controller
 		    
 		 
 		  
+    }
+
+    public function logout(){      	
+    	Session::forget('logged_in');	
+    	return redirect('/login');
     }
 
     public function add(){    			

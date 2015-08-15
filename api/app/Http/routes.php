@@ -12,6 +12,7 @@
 */
 
 Route::get('/store','store@index');
+Route::get('/logout','store@logout');
 Route::get('/login',function()
 {
     return view('store.login');
@@ -23,6 +24,7 @@ Route::get('/register',function()
 Route::post('/register','store@add');
 Route::post('/login','store@login');
 Route::post('/product/add','product@save');
+Route::post('/delivery/add-person','delivery@addPerson');
 
 Route::get('/connect','CPS@connect');
 
