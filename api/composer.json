@@ -18,7 +18,8 @@
     "autoload": {
         "classmap": [
             "database",
-            "vendor/clusterpoint/php-client-api/cps_api.php"
+            "vendor/clusterpoint/php-client-api/cps_api.php",
+            "app/Http/Controllers/CPS.php"
         ],
         "psr-4": {
             "App\\": "app/"
