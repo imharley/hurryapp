@@ -180,8 +180,8 @@
 							      			<td >{{ count(@$order['items']) }}</td>							      			
 							      			<td >{{ @$order['notes'] }}</td>
 							      			<td >{{ $order['total'] }}</td>							      			
-							      			<td ><a href="/order/acknowledge/{{ $order['id'] }}" class="btn btn-info" >					      		
-			  Acknowledge
+							      			<td ><a href="/order/for_delivery/{{ $order['id'] }}" class="btn btn-info" >					      		
+			  For Delivery
 			</a></td>	
 							      		</tr>
 						      		@endif
@@ -203,7 +203,7 @@
 					      		<th>Product Count</th>					      		
 					      		<th>Notes</th>
 					      		<th>Total</th>	
-					      		<th>Status</th>						      		
+					      							      	
 				      		</tr>
 				      	</thead>
 				      	<tbody>
@@ -215,9 +215,7 @@
 							      			<td >{{ count(@$order['items']) }}</td>							      			
 							      			<td >{{ @$order['notes'] }}</td>
 							      			<td >{{ $order['total'] }}</td>	
-							      			<td ><a href="/on-the-way/{{ $order['id'] }}" class="btn btn-info" data-toggle="modal" data-target="#myModal">
-			  On the way
-			</a></td>	
+							      			
 							      		</tr>
 						      		@endif
 					      		@endforeach
@@ -243,7 +241,7 @@
 				      	<tbody>
 				      		@if(count(@$orders))
 					      		@foreach($orders as $order)
-					      			@if($order['status'] == 'on_th_way')
+					      			@if($order['status'] == 'on_the_way')
 							      		<tr>				      			
 							      			<td >{{ $order['id'] }}</td>							      										      			
 							      			<td >{{ count(@$order['items']) }}</td>							      			
