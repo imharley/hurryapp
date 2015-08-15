@@ -25,6 +25,8 @@ Route::get('/register',function()
     return view('store.register');
 });
 
+
+Route::post('order/for-delivery/','Order@forDelivery');
 Route::get('/order/{status}/{order_id}','Order@status');
 
 Route::post('/register','Store@add');

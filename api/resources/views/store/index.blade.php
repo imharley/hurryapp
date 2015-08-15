@@ -112,7 +112,44 @@
 		     
 		  </div>
 		  
+
 		  <div role="tabpanel" class="tab-pane fade in" id="orders" aria-labelledby="orders-tab">
+
+		  	<!-- Modal -->
+			<div class="modal fade" id="for-delivery-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			    <form method="post" action="/order/for-delivery/">
+			    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="myModalLabel">Assign Driver</h4>
+			      </div>
+			      <div class="modal-body">
+			        
+					  <div class="form-group">					    
+					    <input type="hidden" name="order_id" class="form-control" id="order_id" placeholder="Name">
+					  </div>
+					  <div class="form-group">	
+					  	<label for="assigned_delivery_person">Delivery Person</label>				    
+					    <select class="form-control" id="assigned_delivery_person" name="assigned_delivery_person">
+						  @foreach($delivery_persons as $delivery_person)
+						  	<option value="{{ $delivery_person['id'] }}">{{ $delivery_person['name'] }}</option>
+						  @endforeach
+						</select>
+					  </div>
+					  
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			        <input type="submit" value="Assign Delivery Person" class="btn btn-info" />
+			      </div>
+			      </form>
+			    </div>
+			  </div>
+			</div>
+
+
 	        <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">
 		    <ul id="myTabs" class="nav nav-tabs" role="tablist">
 		      <li role="presentation" class="active"><a href="#pending" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Pending</a></li>
@@ -180,7 +217,7 @@
 							      			<td >{{ count(@$order['items']) }}</td>							      			
 							      			<td >{{ @$order['notes'] }}</td>
 							      			<td >{{ $order['total'] }}</td>							      			
-							      			<td ><a href="/order/for_delivery/{{ $order['id'] }}" class="btn btn-info" >					      		
+							      			<td ><a onclick="assign_order('{{ $order['id'] }}')" href="#" class="btn btn-info" data-toggle="modal" data-target="#for-delivery-modal">
 			  For Delivery
 			</a></td>	
 							      		</tr>
@@ -200,10 +237,10 @@
 				      	<thead>
 				      		<tr>				      		
 					      		<th>Order ID</th>					      		
-					      		<th>Product Count</th>					      		
+					      		<th>Product Count</th>
+					      		<th>Delivery Person</th>
 					      		<th>Notes</th>
-					      		<th>Total</th>	
-					      							      	
+					      		<th>Total</th>						      							      
 				      		</tr>
 				      	</thead>
 				      	<tbody>
@@ -213,9 +250,9 @@
 							      		<tr>				      			
 							      			<td >{{ $order['id'] }}</td>							      										      			
 							      			<td >{{ count(@$order['items']) }}</td>							      			
+							      			<td >{{ @$order['delivery_person_name'] }}</td>
 							      			<td >{{ @$order['notes'] }}</td>
-							      			<td >{{ $order['total'] }}</td>	
-							      			
+							      			<td >{{ $order['total'] }}</td>								      			
 							      		</tr>
 						      		@endif
 					      		@endforeach
@@ -293,6 +330,8 @@
 			  </div>
 	      </div>
 
+
+
 	      <div role="tabpanel" class="tab-pane fade in" id="delivery" aria-labelledby="delivery-tab">
 		        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#delivery-person">
 				  Add Delivery Person
@@ -364,4 +403,14 @@
 
 	</div>
 </div>
+@stop
+
+@section('footer')
+<script type="text/javascript">
+	function assign_order(order_id){
+		var order = document.getElementById("order_id");
+      	order.value = order_id;
+	}
+
+</script>
 @stop
