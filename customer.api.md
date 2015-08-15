@@ -1,7 +1,7 @@
 HurryApp Customer API
 =======
 
-##### Registration/Login [/login POST]
+##### Registration/Login [/api/customer/login POST]
 
 Paremeters 
 
@@ -14,7 +14,7 @@ Response (with password parameter)
 		token: 1234567890
 	}
 	
-##### Retrieve Stores [/stores GET]
+##### Retrieve Stores [/api/customer/stores GET]
 
 Parmeters	
 
@@ -42,7 +42,7 @@ Response
 		]
 	}
 
-#### Create order [/orders POST] 
+#### Create order [/api/customer/orders POST] 
 
 Parameters
 
@@ -56,7 +56,7 @@ Response
 
 	Status code 201
 
-##### Recent orders [/orders/recent GET]
+##### Recent orders [/api/customer/orders/recent GET]
 
 Response
 

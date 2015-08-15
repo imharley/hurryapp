@@ -1,7 +1,7 @@
 HurryApp Driver API
 ===================
 
-##### Login [/login/driver POST]
+##### Login [/api/delivery/login POST]
 
 Parameters
 
@@ -14,7 +14,7 @@ Response
         token: 1234567890
     }
     
-##### Orders for delivery [/orders GET]
+##### Orders for delivery [/api/delivery/orders GET]
 
 Response
 
@@ -67,7 +67,7 @@ Response
         ]
     }
 
-##### Update order's status (/orders/{id} PUT}
+##### Update order's status [/api/delivery/orders/{id} PUT]
     
 Parameters
  
