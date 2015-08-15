@@ -1,0 +1,11 @@
+
+Cyber Receipt		Date:12/31/2013 11:48 AM
+-----------------------------------------------------------------------
+Reference Id           : 1665784
+Timestamp              : 12/31/2013 11:47 AM
+Debit Account Id       : 109451782318
+Credit Account Id      : 109452543101
+Transaction Amount     : 11,056.29
+Transaction Currency   : PHP
+Transaction Remarks    : Jim year end payment
+----------------------------------------------------------------------

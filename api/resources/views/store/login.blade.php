@@ -12,9 +12,16 @@
 
 <div class="container">
 <div class="panel panel-default">
-  <div class="panel-heading">Login {{ @$error_msg }}</div>
+  <div class="panel-heading">Login</div>
 
   <div class="panel-body">
+  @if (isset($error_msg))
+    <div class="alert alert-danger">
+      {{ $error_msg }}
+    </div>
+    
+  @endif
+  
     <form class="form-horizontal" action="/login" method="post">
       <input type="hidden" name="_token" value="{{ csrf_token() }}">
       <div class="form-group">

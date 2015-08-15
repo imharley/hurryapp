@@ -20,11 +20,12 @@ Route::get('/login',function()
     return view('store.login');
 });
 Route::get('/register',function()
-{
+{	
     return view('store.register');
 });
 Route::post('/register','store@add');
 Route::post('/login','store@login');
+Route::post('/product/add','product@save');
 
 Route::get('/connect','CPS@connect');
 

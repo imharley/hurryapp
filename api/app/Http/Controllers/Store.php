@@ -12,10 +12,8 @@ class Store extends Controller
     	return view('store.index');
     }
 
-    public function login(){
-    	$cps = new CPS();
-    	if($cps->connect()){
-    		$cpsSimple = $cps->connection;	
+    public function login(){    	
+    	    		
     	// search for items with category == 'cars' and car_params/year >= 2010
 		  $query = CPS_Term(Request::get('email'), 'email') . CPS_Term(Request::get('password'), 'password'); 
 		  // return documents starting with the first one - offset 0
@@ -30,7 +28,7 @@ class Store extends Controller
 		  );
 		  // order by year, from largest to smallest
 		  $ordering = CPS_NumericOrdering('id', 'descending');
-		  $documents = $cpsSimple->search($query, $offset, $docs, $list, $ordering);
+		  $documents = CPS::instance()->search($query, $offset, $docs, $list, $ordering);
 
 		  if(count($documents))
 		  	return redirect('/store');
@@ -39,7 +37,7 @@ class Store extends Controller
 		  	return view('store.login',compact('error_msg'));	
 		  }
 		    
-		 }
+		 
 		  
     }
 
@@ -53,7 +51,8 @@ class Store extends Controller
 				'store_name' => Request::get('name'),
 				'email' => Request::get('email'),
 				'password' => Request::get('password'),
-				'store_description' => Request::get('description'),				
+				'store_description' => Request::get('description'),
+				'document_type' => 'store',				
 				'store_location' => array(
 			        'longtitude' => Request::get('longtitude'),
 					'latitude' => Request::get('latitude')
