@@ -10,33 +10,11 @@
 
 <body>
 
-<div class="container">
-	<nav id="navbar-example2" class="navbar navbar-default navbar-static">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-example-js-navbar-scrollspy">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Hurry App</a>
-        </div>
-        <div class="collapse navbar-collapse bs-example-js-navbar-scrollspy">
-          <ul id="myTabs" class="nav navbar-nav" role="tablist">
-		      <li role="presentation" class="active"><a href="#products" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="false">Products</a></li>
-		      <li role="presentation" class=""><a href="#orders" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile" aria-expanded="true">Orders</a></li>		      
-		    </ul>
-        </div>
-      </div>
-    </nav>
-
 
  <div class="">
  	@yield('content')
  </div>
 
- </div>
 
 <footer>
 	@yield('footer')

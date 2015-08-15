@@ -64,9 +64,17 @@ class CPS
 	 */
 	protected static function build($type, $conditions)
 	{
-		$query = CPS_Term($type, 'document_type');
+		$query = '';
+		if ($type) {
+			$query = CPS_Term($type, 'document_type');
+		}
 		foreach ($conditions as $field => $value) {
-			$query .= CPS_Term($value, $field);
+			$escape = true;
+			if (is_array($value)) {
+				$value = static::build(null, $value);
+				$escape = false;
+			}
+			$query .= CPS_Term($value, $field, $escape);
 		}
 		return $query;
 	}
