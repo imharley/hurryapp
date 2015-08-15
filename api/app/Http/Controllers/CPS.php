@@ -90,4 +90,25 @@ class CPS
 		$documents = CPS::instance()->search($query, $options['offset'], $options['docs'], $options['list'], $options['ordering'], $options['returnType'], $options['stemlang']);
 		return $documents ? array_values($documents) : null;
 	}
+
+	/**
+	 * @param $data
+	 */
+	public static function save($data, $type = null)
+	{
+		if (!isset($data['id'])) {
+			$id = uniqid($type . '_');
+			$data['document_type'] = $type;
+			$method = 'insertSingle';
+		} else {
+			$id = $data['id'];
+			unset($data['id']);
+			$method = 'updateSingle';
+		}
+		$result = CPS::instance()->$method($id, $data);
+		if (!$result) {
+			return false;
+		}
+		return $data + ['id' => $id];
+	}
 }
