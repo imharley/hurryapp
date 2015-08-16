@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Customer;
 use App\Models\CustomerLogin;
+use Carbon\Carbon;
 
 /**
  * Class CustomerAPIController
@@ -19,7 +20,7 @@ class CustomerAPIController extends Controller
     public function __construct()
     {
         $this->middleware('cors');
-        $this->middleware('apiAuth');
+//        $this->middleware('apiAuth');
     }
 
     /**
@@ -51,10 +52,16 @@ class CustomerAPIController extends Controller
      */
     public function stores()
     {
+        $tz = 'Asia/Manila';
         $stores = \CPS::findMany('store');
+        $current = Carbon::now($tz);
         if ($stores) {
-            foreach ($stores as $store) {
-                $store['items'] = \CPS::findMany('product', ['store_id' => $store['id']]);
+            foreach ($stores as &$store) {
+                unset($store['password']);
+                $open = Carbon::createFromFormat('Y-m-d h:iA', $current->toDateString() . ' ' . $store['store_hours']['open'], $tz);
+                $close = Carbon::createFromFormat('Y-m-d h:iA', $current->toDateString() . ' ' . $store['store_hours']['close'], $tz);
+                $store['items'] = (array) \CPS::findMany('product', ['store_id' => $store['id']]);
+                $store['status'] = $current->between($close, $open);
             }
         }
         return $stores;
@@ -65,7 +72,7 @@ class CustomerAPIController extends Controller
      */
     public function recentOrders()
     {
-        
+        return \CPS::findMany('order', ['customer' => ['id' => Customer::getCurrent()->data['id']]]);
     }
 
     /**
@@ -73,14 +80,38 @@ class CustomerAPIController extends Controller
      */
     public function createOrder()
     {
-//        $order = \Input
+        $order = \Input::all();
+        $order['change'] = $order['money'] - $order['total'];
+        $order['status'] = 'pending';
+        $order['timestamp'] = time();
+        $store = \CPS::findOne('store', ['id' => $order['store']['store_id']]);
+        $order['store']['name'] = $store['store_name'];
+        $order['store']['description'] = $store['store_description'];
+        $order['store']['latitude'] = $store['store_location']['latitude'];
+        $order['store']['longitude'] = $store['store_location']['longitude'];
+        $order['customer'] = [
+            'id' => Customer::getCurrent()->data['id'],
+            'name' => Customer::getCurrent()->data['name'],
+            'phone' => Customer::getCurrent()->data['phone'],
+            'email' => Customer::getCurrent()->data['email'],
+            'location' => [    
+                'latitude' => 7.0723308,
+                'longitude' => 125.6106872,
+//                'latitude' => $_COOKIE['latitude'],
+//                'longitude' => $_COOKIE['longitude'],
+            ],
+        ];
+        return \CPS::save($order, 'order');
     }
 
     /**
      * 
      */
-    public function updateOrderStatus()
+    public function updateOrderStatus($orderId)
     {
-        
+        $order = \CPS::findOne('order', ['id' => $orderId]);
+        $order['status'] = 'cancelled';
+        \CPS::save($order, 'order');
+        return ['success' => 1];
     }
 }

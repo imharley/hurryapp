@@ -11,7 +11,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Hurry App</a>
+          <img src="/images/hurry-app-logo.png" class="" alt="Hurry App" width="40"/> <a class="navbar-brand" href="/store">Hurry App</a>
         </div>
         <div class="collapse navbar-collapse bs-example-js-navbar-scrollspy">
           <ul id="myTabs" class="nav navbar-nav" role="tablist">
@@ -20,6 +20,9 @@
 		      <li role="presentation" class=""><a href="#delivery" role="tab" id="delivery-tab" data-toggle="tab" aria-controls="delivery" aria-expanded="true">Delivery Persons</a></li>
 		      <li role="presentation" class=""><a href="/logout">Logout</a></li>
 		    </ul>
+		    <ul class="nav navbar-nav navbar-right">
+	            <li class="active"><a>Hi <strong>{{ @$logged_store_name }}!</strong></a>	</li>
+	          </ul>
         </div>
       </div>
     </nav>
@@ -133,9 +136,11 @@
 					  <div class="form-group">	
 					  	<label for="assigned_delivery_person">Delivery Person</label>				    
 					    <select class="form-control" id="assigned_delivery_person" name="assigned_delivery_person">
-						  @foreach($delivery_persons as $delivery_person)
+						  @if(count(@delivery_persons) >0)
+						  @foreach(@$delivery_persons as $delivery_person)
 						  	<option value="{{ $delivery_person['id'] }}">{{ $delivery_person['name'] }}</option>
 						  @endforeach
+						  @endif
 						</select>
 					  </div>
 					  

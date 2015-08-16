@@ -10,8 +10,8 @@ use Session;
 class Store extends Controller
 {
     public function index(){
-    	$store_id = Session::get('logged_in');     	
-
+    	$store_id = Session::get('logged_in');    	
+    	$logged_store_name = Session::get('logged_store_name'); 
     	$products = CPS::findMany('product',
 		  					['store_id'=>$store_id]		  					
 		  				);
@@ -20,9 +20,10 @@ class Store extends Controller
 		  					['store_id'=>$store_id]		  					
 		  				);
 
+$delivery_persons = (count($delivery_persons) > 0)?$delivery_persons:array();
     	$orders = CPS::findMany('order');    	
     	if(!empty($store_id))
-    		return view('store.index',compact('products','delivery_persons','orders'));
+    		return view('store.index',compact('products','delivery_persons','orders','logged_store_name'));
     	else
     		return redirect('/login');
     }
@@ -33,7 +34,8 @@ class Store extends Controller
 		  					['email'=>Request::get('email'),'password'=>Request::get('password')]		  					
 		  				);
 		  if(count($documents)){		  	
-		  		Session::put('logged_in', $documents['id']);		  	
+		  		Session::put('logged_in', $documents['id']);
+		  		Session::put('logged_store_name', $documents['store_name']);
 		  		return redirect('/store');
 		  }else{
 		  	$error_msg = "Store account not found.";
@@ -46,6 +48,7 @@ class Store extends Controller
 
     public function logout(){      	
     	Session::forget('logged_in');	
+    	Session::forget('logged_store_name');	
     	return redirect('/login');
     }
 

@@ -24,13 +24,21 @@ class ApiAuthentication
      */
     public function handle($request, $next)
     {
-        if (!($token = $_COOKIE['_token'])) {
+        if (\Route::current()->getActionName() == 'App\Http\Controllers\CustomerAPIController@login') {
             return $next($request);
         }
+        if (!($request->cookie('_token'))) {
+            return response()->json(['success' => 0]);
+        }
+        $token = $request->cookie('_token');
         $customer = Customer::retrieveByToken($token);
         if (!$customer) {
             return response()->json(['success' => 0]);
         }
+//        $customer->data['lastLocation'] = [
+//            'lat' => $_COOKIE['lat'],
+//            'lng' => $_COOKIE['lng'],
+//        ];
         Customer::setCurrent($customer);
         return $next($request);
     }
