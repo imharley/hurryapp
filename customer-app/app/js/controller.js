@@ -111,11 +111,7 @@ registationControllers.controller('orderController', ['$scope', '$http', '$locat
 }]);
 
 function sample(data) {
-
-	console.log( data.items );
-
 	$.each(data.items, function(i,v) {
-		// $('#store-items').append('<div class="item"><img  src="'+v.image+'" alt="The Last of us"></div>');
 		$('#store-items').append( 
 			$('<div/>').attr( 
 				{ 
@@ -124,7 +120,7 @@ function sample(data) {
 					'data-store_id' :v.store_id ,
 				}
 			).addClass("item")
-			.html('<div class="product-detail"><h1>'+v.product_name+'</h1><p>'+v.product_name+'</p><p class="price">PHP '+v.product_price+'</p></div><img  src="'+v.image+'" alt="The Last of us">') );
+			.html('<div class="product-detail"><h1>'+v.product_name+'</h1><p>'+v.product_description+'</p><p class="price">PHP '+v.product_price+'</p></div><img  src="'+v.image+'" alt="The Last of us">') );
 	});
 
 	$("#store-items").owlCarousel({
@@ -134,3 +130,9 @@ function sample(data) {
 	  singleItem:true
 	});
 }
+
+$(function() {
+  $('#main-holder').on('click', '.add-button span', function() {
+    alert('now');
+  });
+});

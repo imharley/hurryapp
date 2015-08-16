@@ -145,7 +145,7 @@ ul li { list-style-type: none; }
 }
 .product-detail {
     background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
-    bottom: 100px;
+    bottom: 25%;
     color: #fff;
     left: 0;
     margin: 0 auto;
@@ -191,10 +191,13 @@ ul li { list-style-type: none; }
     width: 100%;
     -webkit-border-radius: 8px;
     border-radius: 8px;
+    text-decoration: none;
 }
 .total-btn:hover {
     color: #fff;
     text-decoration: none;
+    text-decoration: none;
+
 }
 .total-btn .total-amount {
     font-size: 30px;
@@ -202,6 +205,7 @@ ul li { list-style-type: none; }
     margin: 0;
     padding: 0;
     font-weight: 300;
+    text-decoration: none;
 }
 .total-label {
     color: #9b7306;
@@ -213,7 +217,7 @@ ul li { list-style-type: none; }
     top: 15px;
 }
 .owl-pagination {
-    bottom: 50px;
+    bottom: 60px;
     position: absolute;
     z-index: 99;
     left: 25px;
@@ -224,10 +228,32 @@ ul li { list-style-type: none; }
     right: 0;
     bottom: 0;
 }
-.add-button span {
-    font-size: 180px;
+.add-button {
+    background: #4fa919 none repeat scroll 0 0;
+    bottom: 94px;
+    color: #fff;
+    height: 100px;
+    padding-top: 65px;
+    position: absolute;
+    right: 10px;
+    text-align: center;
+    width: 100px;
+    z-index: 999;
+    cursor: pointer;
+    -webkit-border-radius: 1000px;
+    border-radius: 1000px;
+    cursor: pointer;
+    z-index: 99999;
 }
-
+.add-button span {
+    font-size: 80px;
+    left: 0;
+    line-height: 80px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+}
 /*-------------------------------
     Media Query
 ---------------------------------*/

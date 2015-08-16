@@ -33,6 +33,9 @@ function($routeProvider) {
       templateUrl: 'templates/order.html',
       controller: 'orderController'
     }).
+    when('/checkout', {
+      templateUrl: 'templates/checkout.html'
+    }).
     otherwise({
       redirectTo: '/dashboard'
     });
