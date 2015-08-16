@@ -27,10 +27,10 @@ class ApiAuthentication
         if (\Route::current()->getActionName() == 'App\Http\Controllers\CustomerAPIController@login') {
             return $next($request);
         }
-        if (!isset($_COOKIE['_token'])) {
+        if (!($request->cookie('_token'))) {
             return response()->json(['success' => 0]);
         }
-        $token = $_COOKIE['_token'];
+        $token = $request->cookie('_token');
         $customer = Customer::retrieveByToken($token);
         if (!$customer) {
             return response()->json(['success' => 0]);
