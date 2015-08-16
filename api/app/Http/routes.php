@@ -36,9 +36,7 @@ Route::post('/delivery/add-person','Delivery@addPerson');
 
 Route::get('/connect','CPS@connect');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','Store@index');
 
 // CUSTOMER
 Route::post('/api/customer/login', 'CustomerAPIController@login');

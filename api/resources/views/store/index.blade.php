@@ -11,7 +11,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Hurry App</a>
+          <img src="/images/hurry-app-logo.png" class="" alt="Hurry App" width="40"/> <a class="navbar-brand" href="/store">Hurry App</a>
         </div>
         <div class="collapse navbar-collapse bs-example-js-navbar-scrollspy">
           <ul id="myTabs" class="nav navbar-nav" role="tablist">
