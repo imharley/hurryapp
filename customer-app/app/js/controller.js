@@ -9,7 +9,7 @@ registationControllers.controller('registerStep1Controller', ['$scope', '$http',
 	$scope.submit = function() {
 		$http({
 			method: 'POST',
-			url: '/api/customer/login/',
+			url: domain + '/api/customer/login/',
 			data: $.param({'phone':$scope.phone}),
 			headers: {'Content-Type': 'application/x-www-form-urlencoded'},
 		}).success(function (data, status) {
@@ -54,7 +54,7 @@ registationControllers.controller('registerStep3Controller', ['$scope', '$http',
 	$scope.submit = function() {
 		$http({
 			method: 'POST',
-			url: '/api/customer/login/',
+			url: domain + '/api/customer/login/',
 			data: $.param({'phone':$cookieStore.get('phone'),'password':$scope.password, 'name':$cookieStore.get('name'),'email':$cookieStore.get('email')}),
 			headers: {'Content-Type': 'application/x-www-form-urlencoded'},
 		}).success(function (data, status) {
@@ -74,6 +74,16 @@ registationControllers.controller('registerStep3Controller', ['$scope', '$http',
 
 /* Dashboard */
 registationControllers.controller('dashboardController', ['$scope', '$http', '$location', '$cookieStore', function($scope, $http, $location, $cookieStore) {
+
+	if ( $cookieStore.get('_token') == null) {
+		$location.path('/registation/step-1');
+	}
+
+}]);
+
+
+/* Open */
+registationControllers.controller('orderController', ['$scope', '$http', '$location', '$cookieStore', '$routeParams', function($scope, $http, $location, $cookieStore, $routeParams) {
 
 	if ( $cookieStore.get('_token') == null) {
 		$location.path('/registation/step-1');
