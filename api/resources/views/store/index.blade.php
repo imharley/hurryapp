@@ -20,6 +20,9 @@
 		      <li role="presentation" class=""><a href="#delivery" role="tab" id="delivery-tab" data-toggle="tab" aria-controls="delivery" aria-expanded="true">Delivery Persons</a></li>
 		      <li role="presentation" class=""><a href="/logout">Logout</a></li>
 		    </ul>
+		    <ul class="nav navbar-nav navbar-right">
+	            <li class="active"><a>Hi <strong>{{ @$logged_store_name }}!</strong></a>	</li>
+	          </ul>
         </div>
       </div>
     </nav>
