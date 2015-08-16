@@ -20,7 +20,7 @@ class CustomerAPIController extends Controller
     public function __construct()
     {
         $this->middleware('cors');
-        $this->middleware('apiAuth');
+//        $this->middleware('apiAuth');
     }
 
     /**

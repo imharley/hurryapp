@@ -1,7 +1,67 @@
-<h1>Order Here!</h1>
+<link href="css/custom.css" rel="stylesheet">
 
-<script>
-$.get( domain + "/api/customer/stores/", function( data ) {
-    console.log(data);
-  });
-</script>
+<!-- Owl Carousel Assets -->
+<link href="js/dist/owl-carousel/owl.carousel.css" rel="stylesheet">
+<link href="js/dist/owl-carousel/owl.theme.css" rel="stylesheet">
+
+<div id="main-wrap">
+
+    <div id="main-content">
+        <div class="container">
+            <div class="user-store-wrap user-store-cart">
+
+                <form role="search" class="navbar-form navbar-left cart-form">
+                    <div class="form-group">
+                        <button class="btn btn-default cart-deduct" type="submit">NEXT</button>
+                        <button class="btn btn-default cart-add" type="submit">NEXT</button>
+                    </div>
+                </form>
+
+
+                <div class="food-carousel">
+                    <div class="container">
+                      <div class="row">
+                        <div class="span12">
+                          <div id="store-items" class="owl-carousel">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div> <!-- store-items -->
+
+            </div>
+        </div>
+        <div class="store-add-item">
+            <div class="add-button"><span>+</span>Add Cart</div>
+        </div>
+        <div>
+            <!-- <button class="btn btn-default cart-deduct" type="submit">NEXT</button> -->
+            <span class="inp-label cart-count">0</span>
+            <!-- <button class="btn btn-default cart-add" type="submit">NEXT</button> -->
+        </div>
+    </div>
+
+    <div class="store-item-navigation">
+        <ul>
+            <li>
+                <div class="return-dashboard">
+                    <a href="#/dashboard"><img width="40px" src="images/home-icon.png"></a>
+                </div>
+            </li>
+            <li>
+                <a class="total-btn" href="#/checkout">
+                    <div class="total-amount">PHP 0.00</div>
+                    <div class="total-label">TOTAL ORDER AMOUNT</div>
+                    <img src="images/right-arrow.png" class="price-arrow" />
+                <a>
+                <!-- <span class="inp-label">PHP</span>
+                <input type="text" class="form-control inp-number total-price">
+                <span class="inp-label total-order-lbl">TOTAL ORDER</span>
+                <button class="btn btn-default total-order-submit" type="submit">N</button> -->
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+<script src="js/dist/owl-carousel/owl.carousel.js"></script>
