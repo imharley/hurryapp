@@ -20,6 +20,7 @@ class Store extends Controller
 		  					['store_id'=>$store_id]		  					
 		  				);
 
+$delivery_persons = (count($delivery_persons) > 0)?$delivery_persons:array();
     	$orders = CPS::findMany('order');    	
     	if(!empty($store_id))
     		return view('store.index',compact('products','delivery_persons','orders','logged_store_name'));

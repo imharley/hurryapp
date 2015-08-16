@@ -47,5 +47,5 @@ Route::put('/api/customer/orders/{id}', 'CustomerAPIController@updateOrderStatus
 
 // DELIVERY
 Route::post('/api/delivery/login', 'DeliveryAPIController@login');
-Route::get('/api/delivery/orders/{id}', 'DeliveryAPIController@orders');
+Route::get('/api/delivery/orders/{id?}', 'DeliveryAPIController@orders');
 Route::put('/api/delivery/orders/{id}', 'DeliveryAPIController@updateOrderStatus');

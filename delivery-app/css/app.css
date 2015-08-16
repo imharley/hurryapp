@@ -147,6 +147,40 @@ ul li { list-style-type: none; }
 	.registration-form { width: auto; }
 
 }
+/*Delivery List*/
+.list-holder > li {
+    padding: 5px 15px;
+}
+.list-holder .list-item {
+    width: 100%;
+    vertical-align: top;
+}
+.list-item .list-no {
+    font-size: 20px;
+    font-weight: 900;
+}
+.list-holder .list-item td {
+    border: 1px solid;
+    text-align: center;
+}
+.list-content .title {
+    font-weight: 600;
+    font-size: 18px;
+    padding-top: 10px;
+}
+.list-content .content {
+    padding-bottom: 10px;
+}
+.list-item .list-info-icon {
+    font-size: 20px;
+}
+.list-no > a:focus {
+    background-color: #005c00;
+    color: #fff;
+    display: block;
+    line-height: 66px;
+}
+table.list-item,table.list-item a{color: #333;}
 .menu_top a{
     width: 100%;
     display: block;

@@ -136,9 +136,11 @@
 					  <div class="form-group">	
 					  	<label for="assigned_delivery_person">Delivery Person</label>				    
 					    <select class="form-control" id="assigned_delivery_person" name="assigned_delivery_person">
-						  @foreach($delivery_persons as $delivery_person)
+						  @if(count(@delivery_persons) >0)
+						  @foreach(@$delivery_persons as $delivery_person)
 						  	<option value="{{ $delivery_person['id'] }}">{{ $delivery_person['name'] }}</option>
 						  @endforeach
+						  @endif
 						</select>
 					  </div>
 					  

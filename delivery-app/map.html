@@ -6,6 +6,7 @@
     <title>Hurry App</title>
     <link href='http://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/superhero/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css">
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -20,8 +21,20 @@
 
 
 
+<!-- List -->
+<div id="delivery-list">
+            <div class="container">
+                <ul class="list-holder store-checkout-wrap tbody-list">
+                    
+                    
+                </ul>
+            </div>
+        </div>
 
-<div id="main-content">
+
+
+<!--  MAP -->
+<div id="main-content" class="delivery-map" style="display: none;">
     <div class="container menu_top" style="top: 0;position: absolute;z-index: 99999;width:100%;">
         <div class="row" style="">
             <div class="grid_1_2 fl">
@@ -38,14 +51,19 @@
     <div id="map" style="height: 100%;min-height: 300px;width: 100%;"></div>
 
     <div class="container menu_top" style="bottom: 0;position: absolute;z-index: 99999;width:100%;">
+        <div class="row">
+           <div style="width: 25%;float: right">
+              <a href="#" class="btn-primary" id="list">Back to List</a>
+            </div>
+        </div>
         <div class="row" style="">
             <div class="grid_1_2 fl">
               <a href="#" class="btn-danger">Failed</a>
             </div>
             <div class="grid_1_2 fl">
+            
               <a href="#" class="btn-success" id="delivered">Delivered</a>
             </div>
-
             <div class="clearfix"></div>
         </div>
     </div>    
@@ -54,7 +72,8 @@
 </div>
 
 <div class="container show_route" style="bottom: 45px;display: none;position: absolute;z-index: 99999;width:100%;">
-  <div class="row menu_top" >     
+  <div class="row menu_top" >  
+
       <ul id="instructions" style="position: absolute; z-index: 999999999;left: 0;bottom: 0;color: #333;background-color: #fff;padding: 6px 12px;margin: 0;">
       </ul>
   </div>
@@ -69,6 +88,28 @@
 
   jQuery(function(){
 
+
+$.get( "http://hurry.app/api/delivery/orders", function( data ) {   
+    $.each(data,function(i, order) {
+      $('.tbody-list').append('<li><table class="list-item"><tbody><tr><td class="list-no"><a href="#"><i class="glyphicon glyphicon-play"></i></a></td><td class="list-content"><div class="title">'+order.customer.name+'</div><div class="content">'+order.total+'</div></td><td class="list-info-icon"><a href="#"><i class="glyphicon glyphicon-search"></i></a></td></tr></tbody></table></li>');
+    });
+  
+});
+
+
+$("td.list-info-icon a").on('click','ul',function(){
+  $('#delivery-list').hide();
+  $('.delivery-map').show();
+  map = new GMaps({
+        div: '#map',
+        lat: -12.043333,
+        lng: -77.028333
+      });
+});
+$("#list").click(function(){
+  $('#delivery-list').show();
+  $('.delivery-map').hide();
+});
 $("#delivered").click(function(){
 
 $.ajax({
@@ -86,11 +127,7 @@ $.ajax({
 $("#show-route").click(function(){
   $(".show_route").toggle();
 });
-map = new GMaps({
-        div: '#map',
-        lat: -12.043333,
-        lng: -77.028333
-      });
+
 
 
 $('#map-out').click(function(e){
