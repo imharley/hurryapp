@@ -48,7 +48,7 @@ class DeliveryAPIController extends Controller
         if ($id) {
             return \CPS::findOne('order', ['id' => $id]);
         }
-        return \CPS::findMany('order');
+        return \CPS::findMany('order', ['status' => 'for_delivery']);
     }    
     
     /**
