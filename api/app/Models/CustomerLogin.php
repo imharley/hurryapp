@@ -89,6 +89,7 @@ class CustomerLogin
         }
         $record['token'] = md5(uniqid());
         \CPS::save($record);
+        $this->_record = null;
         return true;
     }
 }
