@@ -1,0 +1,187 @@
+/*-------------------------------
+    Body
+---------------------------------*/
+body { font-family: 'Lato', sans-serif; background-color: #255a94; overflow: hidden   ;}
+.container { padding-left: 0; padding-right: 0; }
+ul li { list-style-type: none; }
+.clear { clear: both; }
+
+/*-------------------------------
+    Header
+---------------------------------*/
+.main-logo { margin: 0 auto; display: block; width: 120px; height: 120px; }
+#header h5 { color: #fff;  text-align: center; margin: 20px 0; font-weight: 300; }
+
+/*-------------------------------
+    Content
+---------------------------------*/
+#main-wrap{padding:20px 0}
+.registration-form{float:none!important;margin:0 auto;width:50%}
+.registration-form .form-group{background-color:#fff;display:block;margin:0 auto 15px;padding:0 0 10px;max-width:320px;border-radius:5px 5px 5px 5px;-moz-border-radius:5px;-webkit-border-radius:5px 5px 5px 5px}
+.registration-form .inp-number{border:medium none; font-weight: 300; text-align: center; box-shadow:none;margin:0 auto!important;padding-left:42px;padding-right:42px;max-width: 320px;color:#333;font-size:20px;}
+.registration-form button{background-color:#59abe3;border:none;color:#fff;display:block;margin:0 auto;width:320px;font-weight: 300;}
+.registration-form button:hover{-webkit-transition:background-color 500ms ease;-moz-transition:background-color 500ms ease;-ms-transition:background-color 500ms ease;-o-transition:background-color 500ms ease;transition:background-color 500ms ease;background-color:#bdc3c7}
+.inp-label{color:#666;font-size:12px;padding:5px}
+.confirmation-code-wrap{margin:48px auto 0;text-align:center;width:320px}
+.confirmation-code{color:#fff}
+.user-store-wrap { background-color: #fff; padding: 0; }
+.gmap { margin: 0 auto; border-bottom: 1px solid #999999; }
+.store-details-list { margin: 0; padding: 0; float: left; }
+.store-photo { float: left; margin: 0 10px 0 0; }
+.store-details-list li { list-style-type: none; }
+.store-name { font-size: 15px !important; }
+.store-details-list li a { color: #333; font-size: 12px; }
+.store-current-distance { color: #0085b2 !important; }
+.store-next {bottom: 0;float: right;padding: 20px 15px;position: absolute;right: 0;top: 18%;}
+.user-store-navigation{background-color:#525252;height:90px;padding:20px 0}
+.sub-user-nav-list{padding:0}
+.user-store-nav-list > li a:hover{text-decoration:none}
+.store-back{float:left;margin:0 10px 0 0}
+.store-details-1 .store-back{position:relative;top:20px}
+.store-checkout-wrap { background-color: #fff; padding: 4px 0; }
+.order-summary{padding:0 15px}
+.order-summary-title{font-size:16px;text-align:center}
+.order-summary-table thead tr th{width:30%}
+.store-list > li{margin:0 0 6px}
+.store-list,.sub-store-list{padding:0;margin:0;position:relative}
+.sub-store-list .store-name{color:#333;font-size:12px}
+.sub-store-list li a{color:#333;font-size:12px}
+.sub-store-list .store-next{position:absolute;right:10px;top:10px}
+.store-search-wrap{background-color:#525252;height:40px}
+.store-search-form{border:medium none!important;box-shadow:none;float:none!important;margin:0;padding:0}
+.search-label{color:#fff;position:relative;top:9px; left: 8px;}
+.store-search-form .form-group{display:block}
+.inp-search-keyword{ float: right; background:rgba(0,0,0,0) none repeat scroll 0 0;border:medium none;box-shadow:none;height:29px;margin:6px 0 0;padding:6px 10px;width:90%!important;color:#fff}
+.inp-search-keyword:focus{box-shadow:none;border:none}
+#dashbaord { overflow: none; }
+#map { position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1;}
+
+.store-details {
+    background: #d7dee5 none repeat scroll 0 0;
+    bottom: 60px;
+    left: 0;
+    padding: 15px 10px;
+    position: absolute;
+    right: 0;
+    z-index: 10;
+    bottom : -60px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.store-name {
+    color: #114074;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.store-desc {
+    color: #666;
+    font-size: 14px;
+}
+.store-hours {
+    text-transform: uppercase;
+}
+.user-store-navigation {
+    position: fixed;
+    height: 60px;
+    background-color: #255a94;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 15;
+    overflow: hidden;
+}
+.user-store-navigation .nav-menu {
+    position: absolute;
+}
+.user-store-navigation .nav-menu a {
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #FFF;
+    font-weight: 300;
+    text-decoration: none;
+}
+.user-store-navigation .nav-menu.nav-left {
+    left: 13%;
+}
+.user-store-navigation .nav-menu.nav-right {
+    right: 13%;
+}
+.user-store-navigation .nav-menu.nav-center {
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 10px;
+}
+.user-store-navigation .nav-menu.nav-center a {
+    background-color: #114074;
+    height: 80px;
+    left: 0;
+    line-height: 80px;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: -20px;
+    width: 80px;
+    -webkit-border-radius: 5000px;
+    border-radius: 5000px;
+}
+
+/*-------------------------------
+    Media Query
+---------------------------------*/
+
+@media screen and (max-width: 980px) {  
+
+}
+
+@media screen and (max-width: 375px) {  
+
+	.registration-form .inp-number { padding-left: 0; padding-right: 0; }
+	.registration-form button { width: 100%; }
+	.registration-form { width: auto; }
+
+}
+/*Delivery List*/
+.list-holder > li {
+    padding: 5px 15px;
+}
+.list-holder .list-item {
+    width: 100%;
+    vertical-align: top;
+}
+.list-item .list-no {
+    font-size: 20px;
+    font-weight: 900;
+}
+.list-holder .list-item td {
+    border: 1px solid;
+    text-align: center;
+}
+.list-content .title {
+    font-weight: 600;
+    font-size: 18px;
+    padding-top: 10px;
+}
+.list-content .content {
+    padding-bottom: 10px;
+}
+.list-item .list-info-icon {
+    font-size: 20px;
+}
+
+table.list-item,table.list-item a{color: #333;}
+.menu_top a{
+    width: 100%;
+    display: block;
+    padding: 12px;
+    text-align: center;
+}
+.grid_1_2{width: 50%}
+.fl{float: left;}
+#map{top: 45px;}

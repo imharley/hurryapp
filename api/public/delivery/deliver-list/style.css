@@ -1,0 +1,236 @@
+/*-------------------------------
+    Body
+---------------------------------*/
+body { font-family: Lato; background-color: #255a94; }
+.container { padding-left: 0; padding-right: 0; }
+ul li { list-style-type: none; }
+.clear { clear: both; }
+
+/*-------------------------------
+    Header
+---------------------------------*/
+.main-logo { margin: 0 auto; display: block; width: 60px; height: 77px; }
+#header h5 { color: #fff;  text-align: center; margin: 20px 0; }
+
+/*-------------------------------
+    Content
+---------------------------------*/
+#main-wrap{padding:20px 0}
+.registration-form{float:none!important;margin:0 auto;width:50%}
+.registration-form .form-group{background-color:#fff;display:block;margin:0 auto 15px;padding:0 0 10px;max-width:320px;border-radius:5px 5px 5px 5px;-moz-border-radius:5px;-webkit-border-radius:5px 5px 5px 5px}
+.registration-form .inp-number{border:medium none; text-align: center; box-shadow:none;margin:0 auto!important;padding-left:42px;padding-right:42px;max-width: 320px;color:#333;font-size:23px}
+.registration-form button{background-color:#59abe3;border:none;color:#fff;display:block;margin:0 auto;width:320px}
+.registration-form button:hover{-webkit-transition:background-color 500ms ease;-moz-transition:background-color 500ms ease;-ms-transition:background-color 500ms ease;-o-transition:background-color 500ms ease;transition:background-color 500ms ease;background-color:#bdc3c7}
+.inp-label{color:#666;font-size:12px;padding:5px}
+.confirmation-code-wrap{margin:48px auto 0;text-align:center;width:320px}
+.confirmation-code{color:#fff}
+.user-store-wrap { background-color: #fff; padding: 0; }
+.gmap { margin: 0 auto; border-bottom: 1px solid #999999; }
+.store-details { margin: 8px 0 0 8px; padding: 0 0 8px; height: 86px; }
+.store-details-list { margin: 0; padding: 0; float: left; }
+.store-photo { float: left; margin: 0 10px 0 0; }
+.store-details-list li { list-style-type: none; }
+.store-name { font-size: 15px !important; }
+.store-details-list li a { color: #333; font-size: 12px; }
+.store-current-distance { color: #0085b2 !important; }
+.store-next{float:right;position:relative;right:10px;top:26px}
+.user-store-navigation{background-color:#525252;height:90px;padding:20px 0}
+.user-store-nav-list{margin:0}
+.user-store-nav-list > li{float:left;text-align:center;width:32%}
+.user-store-nav-list > li a{color:#fff}
+.sub-user-nav-list{padding:0}
+.user-store-nav-list > li a:hover{text-decoration:none}
+.store-back{float:left;margin:0 10px 0 0}
+.store-details-1 .store-back{position:relative;top:20px}
+.store-checkout-wrap { background-color: #fff; padding: 4px 0; }
+.order-summary{padding:0 15px}
+.order-summary-title{font-size:16px;text-align:center}
+.order-summary-table thead tr th{width:30%}
+.store-list > li{margin:0 0 6px}
+.store-list,.sub-store-list{padding:0;margin:0;position:relative}
+.sub-store-list .store-name{color:#333;font-size:12px}
+.sub-store-list li a{color:#333;font-size:12px}
+.sub-store-list .store-next{position:absolute;right:10px;top:10px}
+.store-search-wrap{background-color:#525252;height:40px}
+.store-search-form{border:medium none!important;box-shadow:none;float:none!important;margin:0;padding:0}
+.search-label{color:#fff;position:relative;top:9px; left: 8px;}
+.store-search-form .form-group{display:block}
+.inp-search-keyword{ float: right; background:rgba(0,0,0,0) none repeat scroll 0 0;border:medium none;box-shadow:none;height:29px;margin:6px 0 0;padding:6px 10px;width:90%!important;color:#fff}
+.inp-search-keyword:focus{box-shadow:none;border:none}
+
+.store-nav-2 {
+    height: 100px;
+}
+
+.store-order-nav > li {
+    margin: 0 14px 0 0;
+    text-align: left;
+    width: auto;
+}
+
+.total-order-form {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: relative;
+}
+
+.total-order-form .form-group {
+    background-color: #ff8000;
+    border-radius: 12px;
+    display: block;
+    height: 61px;
+    padding: 0 8px 0 30px;
+}
+
+.total-order-form .form-group span {
+    color: #fff;
+    float: left;
+    font-size: 18px;
+    padding: 0;
+    font-weight: bold;
+    margin: 0 8px 0 0;
+    position: relative;
+    top: 3px;
+}
+
+.total-order-form .total-price {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none;
+    box-shadow: none;
+    display: block;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold;
+    width: 80%;
+}
+
+.store-order-nav > li:last-child {
+    margin: 0;
+    width: 85% !important;
+}
+
+.total-order-submit {
+    background: rgba(0, 0, 0, 0) url("images/right-arrow.png") no-repeat scroll 0 0;
+    border: medium none;
+    color: transparent;
+    height: 32px;
+    padding: 0;
+    position: absolute;
+    right: 20px;
+    top: 13px;
+    width: 17px;
+}
+
+.total-order-submit:hover {
+    background-color: transparent;
+    color: transparent;
+}
+
+.total-order-lbl {
+    text-align: center;
+    top: 0 !important;
+    width: 100%;
+}
+
+#owl-demo .item{
+  margin: 3px;
+}
+#owl-demo .item img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+#demo  { overflow: hidden; }
+
+.owl-pagination {
+    display: none;
+}
+
+.owl-controls {
+    margin: 0 !important;
+    position: absolute;
+    top: 46%;
+    width: 100%;
+}
+
+.owl-controls .owl-buttons {
+    position: relative;
+}
+
+.owl-controls .owl-buttons .owl-prev {
+    position: absolute;
+    left: 25px;
+    background: url("images/left-arrow-white.png") !important;
+    color: transparent !important;
+}
+
+.owl-controls .owl-buttons .owl-next {
+    position: absolute;
+    right: 25px;
+    background: url("images/right-arrow-white.png") !important;
+    color: transparent !important;
+}
+
+.owl-controls .owl-buttons > div { width: 41px; height: 53px; }
+
+.owl-wrapper .owl-item {
+    
+}
+/*Delivery List*/
+.list-holder > li {
+    padding: 5px 15px;
+}
+.list-holder .list-item {
+    width: 100%;
+    vertical-align: top;
+}
+.list-item .list-no {
+    font-size: 20px;
+    font-weight: 900;
+}
+.list-holder .list-item td {
+    border: 1px solid;
+    text-align: center;
+}
+.list-content .title {
+    font-weight: 600;
+    font-size: 18px;
+    padding-top: 10px;
+}
+.list-content .content {
+    padding-bottom: 10px;
+}
+.list-item .list-info-icon {
+    font-size: 20px;
+}
+.list-no > a:focus {
+    background-color: #005c00;
+    color: #fff;
+    display: block;
+    line-height: 66px;
+}
+
+
+/*-------------------------------
+    Media Query
+---------------------------------*/
+
+@media screen and (max-width: 980px) {  
+
+}
+
+@media screen and (max-width: 768px) {  
+}
+
+@media screen and (max-width: 375px) {  
+
+	.registration-form .inp-number { padding-left: 0; padding-right: 0; }
+	.registration-form button { width: 100%; }
+	.registration-form { width: auto; }
+
+}
