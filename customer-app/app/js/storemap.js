@@ -83,9 +83,11 @@ function showinfo( data ) {
 
 //jquery actions
 $(function() {
+  var store_data = '';
 
   $.get( domain + "/api/customer/stores/", function( data ) {
     initMap(data);
+    store_data = data;
   });
 
   var reload_tpl = function() {

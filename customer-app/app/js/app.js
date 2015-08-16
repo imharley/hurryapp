@@ -66,3 +66,25 @@ hurryApp.directive('validNumber', function() {
     }
   };
 });
+
+hurryApp.directive('owlDirective', function() {
+  return function(scope, element, attrs) {
+    if (scope.$last){
+
+      $("#owl-demo").owlCarousel({
+          navigation : true, // Show next and prev buttons
+          slideSpeed : 300,
+          paginationSpeed : 400,
+          singleItem:true
+      });
+
+    }
+  };
+});
+
+
+$(function() {
+  $(window).resize(function() {
+    $('#main-holder').css({'width':$(window).width(), 'height':$(window).height()});
+  }).resize();
+});

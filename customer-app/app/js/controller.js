@@ -89,4 +89,48 @@ registationControllers.controller('orderController', ['$scope', '$http', '$locat
 		$location.path('/registation/step-1');
 	}
 
+	$http({
+		method: 'GET',
+		url: domain + "/api/customer/stores/",
+	}).success(function (data, status) {
+		$scope.response = data;
+
+		$.each(data, function( i, v ) {
+			if ( $routeParams.storeId == v.id ) {
+		  		$scope.items = v;
+			}
+		});
+
+		if ( $scope.items == null ) {
+			$location.path('/dashboard');
+		}
+
+		sample( $scope.items );
+	});
+
 }]);
+
+function sample(data) {
+
+	console.log( data.items );
+
+	$.each(data.items, function(i,v) {
+		// $('#store-items').append('<div class="item"><img  src="'+v.image+'" alt="The Last of us"></div>');
+		$('#store-items').append( 
+			$('<div/>').attr( 
+				{ 
+					'data-price' :v.product_price ,
+					'data-id' :v.id ,
+					'data-store_id' :v.store_id ,
+				}
+			).addClass("item")
+			.html('<div class="product-detail"><h1>'+v.product_name+'</h1><p>'+v.product_name+'</p><p class="price">PHP '+v.product_price+'</p></div><img  src="'+v.image+'" alt="The Last of us">') );
+	});
+
+	$("#store-items").owlCarousel({
+	  navigation : true, // Show next and prev buttons
+	  slideSpeed : 300,
+	  paginationSpeed : 400,
+	  singleItem:true
+	});
+}
