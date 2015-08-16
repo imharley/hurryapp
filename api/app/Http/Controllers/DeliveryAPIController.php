@@ -54,16 +54,12 @@ class DeliveryAPIController extends Controller
     /**
      * 
      */
-    public function order($id)
+    public function updateOrderStatus($id)
     {
-        
-    }
-
-    /**
-     * 
-     */
-    public function updateOrderStatus()
-    {
-        
+        $status = \Input::get('status');
+        $order = \CPS::findOne('order', ['id' => $id]);
+        $order['status'] = $status;
+        \CPS::save($order);
+        return ['success' => 1];
     }
 }
